@@ -12,7 +12,6 @@ protocol MovieListViewProtocol: AnyObject {
     var viewModel: MovieListViewModelProtocol { get }
     
     func update(uiModel: MoviesUIModel)
-    func printErim(string: String)
 }
 
 final class MovieListViewController: UIViewController {
@@ -72,10 +71,6 @@ extension MovieListViewController: MovieListViewProtocol {
     func update(uiModel: MoviesUIModel) {
         self.tableViewDataSource?.update(uiModel: uiModel)
         self.movieListTableView.reloadData()
-    }
-    
-    func printErim(string: String) {
-        print(string)
     }
 }
 

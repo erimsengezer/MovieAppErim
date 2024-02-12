@@ -22,12 +22,3 @@ class MoviesNetworkManager: BaseManager<MovieAPI, MoyaProvider<MovieAPI>>, Movie
         request(target: .getAllMovies, completion: completion)
     }
 }
-
-struct Movies: Decodable {
-    let results: [Movie]
-}
-
-struct Movie: Decodable {
-    let id: Int
-    let original_name: String
-}

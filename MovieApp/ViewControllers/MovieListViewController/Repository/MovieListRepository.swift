@@ -15,6 +15,7 @@ protocol MovieListRepositoryProtocol: AnyObject {
     func fetchAllMovies(success: @escaping SuccessHandler, failure: @escaping FailureHandler)
 }
 
+
 final class MovieListRepository: MovieListRepositoryProtocol {
     
     let networkManager: MoviesNetworkManager

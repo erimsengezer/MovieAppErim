@@ -23,6 +23,9 @@
 		E55C87F02B7AAD1E00B73E14 /* MovieListTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55C87EF2B7AAD1E00B73E14 /* MovieListTableViewDataSource.swift */; };
 		E55C87F22B7AAD4600B73E14 /* MovieListTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55C87F12B7AAD4600B73E14 /* MovieListTableViewDelegate.swift */; };
 		E55C87F42B7AC01C00B73E14 /* MovieAppModule.xctemplate.zip in Resources */ = {isa = PBXBuildFile; fileRef = E55C87F32B7AC01C00B73E14 /* MovieAppModule.xctemplate.zip */; };
+		E55C87F72B7AC27400B73E14 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55C87F62B7AC27400B73E14 /* Movies.swift */; };
+		E55C87F92B7AC2F400B73E14 /* MoviesUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55C87F82B7AC2F400B73E14 /* MoviesUIModel.swift */; };
+		E55C87FC2B7AC67400B73E14 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E55C87FB2B7AC67400B73E14 /* Kingfisher */; };
 		E571B8982B7A841400740201 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = E571B8972B7A841400740201 /* Moya */; };
 		E571B89F2B7A88A800740201 /* BaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E571B89E2B7A88A800740201 /* BaseManager.swift */; };
 		E571B8A12B7A890A00740201 /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E571B8A02B7A890A00740201 /* Definitions.swift */; };
@@ -51,6 +54,8 @@
 		E55C87EF2B7AAD1E00B73E14 /* MovieListTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListTableViewDataSource.swift; sourceTree = "<group>"; };
 		E55C87F12B7AAD4600B73E14 /* MovieListTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListTableViewDelegate.swift; sourceTree = "<group>"; };
 		E55C87F32B7AC01C00B73E14 /* MovieAppModule.xctemplate.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = MovieAppModule.xctemplate.zip; sourceTree = "<group>"; };
+		E55C87F62B7AC27400B73E14 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
+		E55C87F82B7AC2F400B73E14 /* MoviesUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesUIModel.swift; sourceTree = "<group>"; };
 		E571B89E2B7A88A800740201 /* BaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseManager.swift; sourceTree = "<group>"; };
 		E571B8A02B7A890A00740201 /* Definitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Definitions.swift; sourceTree = "<group>"; };
 		E571B8A22B7A893700740201 /* NetworkUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtil.swift; sourceTree = "<group>"; };
@@ -63,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E55C87FC2B7AC67400B73E14 /* Kingfisher in Frameworks */,
 				E571B8982B7A841400740201 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,6 +137,7 @@
 		E55C87D82B7AA61400B73E14 /* MovieListViewController */ = {
 			isa = PBXGroup;
 			children = (
+				E55C87F52B7AC25D00B73E14 /* Model */,
 				E55C87E82B7AA67000B73E14 /* Builder */,
 				E55C87E72B7AA66900B73E14 /* Repository */,
 				E55C87E62B7AA65900B73E14 /* ViewModel */,
@@ -190,6 +197,15 @@
 				E55C87F12B7AAD4600B73E14 /* MovieListTableViewDelegate.swift */,
 			);
 			path = "Delegate&DataSource";
+			sourceTree = "<group>";
+		};
+		E55C87F52B7AC25D00B73E14 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E55C87F62B7AC27400B73E14 /* Movies.swift */,
+				E55C87F82B7AC2F400B73E14 /* MoviesUIModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E571B8992B7A885B00740201 /* NetworkLayer */ = {
@@ -254,6 +270,7 @@
 			name = MovieApp;
 			packageProductDependencies = (
 				E571B8972B7A841400740201 /* Moya */,
+				E55C87FB2B7AC67400B73E14 /* Kingfisher */,
 			);
 			productName = MovieApp;
 			productReference = E51BC0D22B7A74E3006DF973 /* MovieApp.app */;
@@ -285,6 +302,7 @@
 			mainGroup = E51BC0C92B7A74E3006DF973;
 			packageReferences = (
 				E571B8962B7A841400740201 /* XCRemoteSwiftPackageReference "Moya" */,
+				E55C87FA2B7AC67400B73E14 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = E51BC0D32B7A74E3006DF973 /* Products */;
 			projectDirPath = "";
@@ -324,8 +342,10 @@
 				E571B89F2B7A88A800740201 /* BaseManager.swift in Sources */,
 				E571B8A82B7A8BB900740201 /* MoviesNetworkManager.swift in Sources */,
 				E55C87DF2B7AA62900B73E14 /* MovieListRepository.swift in Sources */,
+				E55C87F92B7AC2F400B73E14 /* MoviesUIModel.swift in Sources */,
 				E55C87EC2B7AAA7400B73E14 /* MovieListTableViewCell.swift in Sources */,
 				E55C87DE2B7AA62900B73E14 /* MovieListViewController.swift in Sources */,
+				E55C87F72B7AC27400B73E14 /* Movies.swift in Sources */,
 				E571B8A12B7A890A00740201 /* Definitions.swift in Sources */,
 				E55C87F22B7AAD4600B73E14 /* MovieListTableViewDelegate.swift in Sources */,
 				E51BC0D82B7A74E3006DF973 /* SceneDelegate.swift in Sources */,
@@ -550,6 +570,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E55C87FA2B7AC67400B73E14 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		E571B8962B7A841400740201 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
@@ -561,6 +589,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E55C87FB2B7AC67400B73E14 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E55C87FA2B7AC67400B73E14 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		E571B8972B7A841400740201 /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E571B8962B7A841400740201 /* XCRemoteSwiftPackageReference "Moya" */;

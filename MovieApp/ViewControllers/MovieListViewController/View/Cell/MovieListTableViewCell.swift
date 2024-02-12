@@ -27,6 +27,6 @@ class MovieListTableViewCell: UITableViewCell {
     }
     
     func configureCell(itemModel: Movie) {
-        self.titleLabel.text = itemModel.original_name
+        titleLabel.text = itemModel.original_name
     }
 }
