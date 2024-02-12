@@ -11,9 +11,15 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: { [weak self] in
+            self?.pushToListViewController()
+        })
     }
 
+    private func pushToListViewController() {
+        guard let viewController: UIViewController = MovieListBuilder.generate() else { return }
+        self.navigationController?.pushViewController(viewController, animated: false)
+    }
 
 }
 
