@@ -16,8 +16,10 @@ struct MoviesUIModel {
         return response.results.count
     }
     
-    func getItemModel(indexPath: IndexPath) -> Movie? {
-        return self.response.results[indexPath.row]
+    func getItemModel(indexPath: IndexPath) -> MovieItemModel? {
+        let movie = self.response.results[indexPath.row]
+        let movieItemModel = MovieItemModel(movie: movie)
+        return movieItemModel
     }
     
     // MARK: - Initializer

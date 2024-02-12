@@ -12,7 +12,7 @@ struct Movies: Decodable {
 }
 
 struct Movie: Decodable {
-    let backdropPath, posterPath, name, originalName: String?
+    let backdropPath, posterPath, originalName: String?
     let id: Int
     
     enum CodingKeys: String, CodingKey {
@@ -20,6 +20,5 @@ struct Movie: Decodable {
         case id
         case originalName = "original_name"
         case posterPath = "poster_path"
-        case name
     }
 }

@@ -27,7 +27,7 @@ class MovieListTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configureCell(itemModel: Movie) {
+    func configureCell(itemModel: MovieItemModel) {
         titleLabel.text = itemModel.originalName
         
         if let path = itemModel.backdropPath {
