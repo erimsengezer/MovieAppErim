@@ -18,7 +18,8 @@ class ViewController: UIViewController {
 
     private func pushToListViewController() {
         guard let viewController: UIViewController = MovieListBuilder.generate() else { return }
-        self.navigationController?.pushViewController(viewController, animated: false)
+        viewController.modalPresentationStyle = .fullScreen
+        self.present(viewController, animated: false)
     }
 
 }

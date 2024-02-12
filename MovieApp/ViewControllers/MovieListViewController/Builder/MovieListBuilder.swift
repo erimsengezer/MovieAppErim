@@ -18,6 +18,7 @@ enum MovieListBuilder {
         let viewModel: MovieListViewModelProtocol = MovieListViewModel(repository: repository)
 
         let view: MovieListViewProtocol = MovieListViewController(viewModel: viewModel)
+        viewModel.view = view
         
         return view as? UIViewController
     }

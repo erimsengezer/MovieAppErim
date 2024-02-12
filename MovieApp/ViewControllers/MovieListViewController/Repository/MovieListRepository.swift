@@ -9,7 +9,10 @@
 import Foundation
 
 protocol MovieListRepositoryProtocol: AnyObject {
+    typealias SuccessHandler = (Movies) -> Void
+    typealias FailureHandler = (Error) -> Void
     
+    func fetchAllMovies(success: @escaping SuccessHandler, failure: @escaping FailureHandler)
 }
 
 final class MovieListRepository: MovieListRepositoryProtocol {
@@ -18,5 +21,16 @@ final class MovieListRepository: MovieListRepositoryProtocol {
     
     init(networkManager: MoviesNetworkManager) {
         self.networkManager = networkManager
+    }
+    
+    func fetchAllMovies(success: @escaping SuccessHandler, failure: @escaping FailureHandler) {
+        networkManager.getAllMovies { result in
+            switch result {
+            case .success(let movies):
+                success(movies)
+            case .failure(let error):
+                failure(error)
+            }
+        }
     }
 }
