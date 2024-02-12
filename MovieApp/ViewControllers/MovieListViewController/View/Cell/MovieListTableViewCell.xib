@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieListTableViewCell" rowHeight="95" id="KGk-i7-Jjw" customClass="MovieListTableViewCell" customModule="MovieApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="529" height="95"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="529" height="95"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Git-bI-zAc">
+                        <rect key="frame" x="0.0" y="0.0" width="529" height="95"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UMe-hn-Lkr">
+                                <rect key="frame" x="16" y="10" width="90" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="j1k-RE-jVG"/>
+                                    <constraint firstAttribute="width" constant="90" id="wor-sT-2we"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Itl-so-Wys">
+                                <rect key="frame" x="114" y="37.333333333333336" width="393" height="20.333333333333336"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Itl-so-Wys" firstAttribute="leading" secondItem="UMe-hn-Lkr" secondAttribute="trailing" constant="8" symbolic="YES" id="SXL-A8-fcY"/>
+                            <constraint firstItem="Itl-so-Wys" firstAttribute="centerY" secondItem="UMe-hn-Lkr" secondAttribute="centerY" id="YE1-2Y-cxa"/>
+                            <constraint firstItem="UMe-hn-Lkr" firstAttribute="centerY" secondItem="Git-bI-zAc" secondAttribute="centerY" id="Yzk-Of-Z9U"/>
+                            <constraint firstItem="UMe-hn-Lkr" firstAttribute="leading" secondItem="Git-bI-zAc" secondAttribute="leading" constant="16" id="ZA7-H6-yL1"/>
+                            <constraint firstAttribute="trailing" secondItem="Itl-so-Wys" secondAttribute="trailing" constant="22" id="aXZ-hm-ebZ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Git-bI-zAc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="0sy-wZ-3F3"/>
+                    <constraint firstAttribute="bottom" secondItem="Git-bI-zAc" secondAttribute="bottom" id="E4Y-Uo-sYu"/>
+                    <constraint firstItem="Git-bI-zAc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Izk-op-oJm"/>
+                    <constraint firstAttribute="trailing" secondItem="Git-bI-zAc" secondAttribute="trailing" id="lyJ-Vs-6Oz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="containerView" destination="Git-bI-zAc" id="5ca-ra-ZXU"/>
+                <outlet property="movieImageView" destination="UMe-hn-Lkr" id="l6N-Te-zoa"/>
+                <outlet property="titleLabel" destination="Itl-so-Wys" id="DON-Fb-5PV"/>
+            </connections>
+            <point key="canvasLocation" x="298.47328244274809" y="36.971830985915496"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
