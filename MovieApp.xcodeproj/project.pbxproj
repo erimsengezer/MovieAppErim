@@ -14,6 +14,12 @@
 		E51BC0DF2B7A74E4006DF973 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E51BC0DE2B7A74E4006DF973 /* Assets.xcassets */; };
 		E51BC0E22B7A74E4006DF973 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E51BC0E02B7A74E4006DF973 /* LaunchScreen.storyboard */; };
 		E5256E7C2B7A7E2800349FF4 /* MovieAppModule.xctemplate.zip in Resources */ = {isa = PBXBuildFile; fileRef = E5256E7B2B7A7E2800349FF4 /* MovieAppModule.xctemplate.zip */; };
+		E571B8982B7A841400740201 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = E571B8972B7A841400740201 /* Moya */; };
+		E571B89F2B7A88A800740201 /* BaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E571B89E2B7A88A800740201 /* BaseManager.swift */; };
+		E571B8A12B7A890A00740201 /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E571B8A02B7A890A00740201 /* Definitions.swift */; };
+		E571B8A32B7A893700740201 /* NetworkUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E571B8A22B7A893700740201 /* NetworkUtil.swift */; };
+		E571B8A52B7A8B4400740201 /* MovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E571B8A42B7A8B4400740201 /* MovieAPI.swift */; };
+		E571B8A82B7A8BB900740201 /* MoviesNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E571B8A72B7A8BB900740201 /* MoviesNetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +33,11 @@
 		E51BC0E32B7A74E4006DF973 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E51BC0EE2B7A78ED006DF973 /* MovieAppTemplate.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = MovieAppTemplate.md; sourceTree = "<group>"; };
 		E5256E7B2B7A7E2800349FF4 /* MovieAppModule.xctemplate.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = MovieAppModule.xctemplate.zip; sourceTree = "<group>"; };
+		E571B89E2B7A88A800740201 /* BaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseManager.swift; sourceTree = "<group>"; };
+		E571B8A02B7A890A00740201 /* Definitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Definitions.swift; sourceTree = "<group>"; };
+		E571B8A22B7A893700740201 /* NetworkUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtil.swift; sourceTree = "<group>"; };
+		E571B8A42B7A8B4400740201 /* MovieAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPI.swift; sourceTree = "<group>"; };
+		E571B8A72B7A8BB900740201 /* MoviesNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesNetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E571B8982B7A841400740201 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				E51BC0EB2B7A789D006DF973 /* Template */,
+				E571B8992B7A885B00740201 /* NetworkLayer */,
 				E51BC0E92B7A773D006DF973 /* ViewControllers */,
 				E51BC0D52B7A74E3006DF973 /* AppDelegate.swift */,
 				E51BC0D72B7A74E3006DF973 /* SceneDelegate.swift */,
@@ -96,6 +109,50 @@
 			path = Template;
 			sourceTree = "<group>";
 		};
+		E571B8992B7A885B00740201 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				E571B89D2B7A889000740201 /* API */,
+				E571B89C2B7A888600740201 /* Manager */,
+				E571B89B2B7A887700740201 /* Definitions */,
+				E571B89A2B7A886600740201 /* BaseManager */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		E571B89A2B7A886600740201 /* BaseManager */ = {
+			isa = PBXGroup;
+			children = (
+				E571B89E2B7A88A800740201 /* BaseManager.swift */,
+			);
+			path = BaseManager;
+			sourceTree = "<group>";
+		};
+		E571B89B2B7A887700740201 /* Definitions */ = {
+			isa = PBXGroup;
+			children = (
+				E571B8A02B7A890A00740201 /* Definitions.swift */,
+				E571B8A22B7A893700740201 /* NetworkUtil.swift */,
+			);
+			path = Definitions;
+			sourceTree = "<group>";
+		};
+		E571B89C2B7A888600740201 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				E571B8A72B7A8BB900740201 /* MoviesNetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		E571B89D2B7A889000740201 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E571B8A42B7A8B4400740201 /* MovieAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,6 +169,9 @@
 			dependencies = (
 			);
 			name = MovieApp;
+			packageProductDependencies = (
+				E571B8972B7A841400740201 /* Moya */,
+			);
 			productName = MovieApp;
 			productReference = E51BC0D22B7A74E3006DF973 /* MovieApp.app */;
 			productType = "com.apple.product-type.application";
@@ -140,6 +200,9 @@
 				Base,
 			);
 			mainGroup = E51BC0C92B7A74E3006DF973;
+			packageReferences = (
+				E571B8962B7A841400740201 /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = E51BC0D32B7A74E3006DF973 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -169,7 +232,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E51BC0DA2B7A74E3006DF973 /* ViewController.swift in Sources */,
+				E571B8A52B7A8B4400740201 /* MovieAPI.swift in Sources */,
 				E51BC0D62B7A74E3006DF973 /* AppDelegate.swift in Sources */,
+				E571B8A32B7A893700740201 /* NetworkUtil.swift in Sources */,
+				E571B89F2B7A88A800740201 /* BaseManager.swift in Sources */,
+				E571B8A82B7A8BB900740201 /* MoviesNetworkManager.swift in Sources */,
+				E571B8A12B7A890A00740201 /* Definitions.swift in Sources */,
 				E51BC0D82B7A74E3006DF973 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,6 +456,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E571B8962B7A841400740201 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E571B8972B7A841400740201 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E571B8962B7A841400740201 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E51BC0CA2B7A74E3006DF973 /* Project object */;
 }
