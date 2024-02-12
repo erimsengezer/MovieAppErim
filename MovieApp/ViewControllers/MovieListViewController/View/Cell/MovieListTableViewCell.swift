@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MovieListTableViewCell: UITableViewCell {
    
@@ -27,6 +28,16 @@ class MovieListTableViewCell: UITableViewCell {
     }
     
     func configureCell(itemModel: Movie) {
-        titleLabel.text = itemModel.original_name
+        titleLabel.text = itemModel.originalName
+        
+        if let path = itemModel.backdropPath {
+            let urlString = "https://image.tmdb.org/t/p/w500\(path)"
+            if let url = URL(string: urlString) {
+                movieImageView.kf.setImage(with: url,
+                                                 placeholder: nil,
+                                                 options: nil,
+                                                 completionHandler: nil)
+            }
+        }
     }
 }
