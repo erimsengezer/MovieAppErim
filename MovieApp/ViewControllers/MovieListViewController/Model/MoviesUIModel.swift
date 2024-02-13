@@ -22,6 +22,10 @@ struct MoviesUIModel {
         return movieItemModel
     }
     
+    func getItemId(indexPath: IndexPath) -> Int {
+        return self.response.results[indexPath.row].id
+    }
+    
     // MARK: - Initializer
     init(response: Movies) {
         self.response = response

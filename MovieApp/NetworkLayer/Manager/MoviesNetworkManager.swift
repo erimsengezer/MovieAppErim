@@ -21,4 +21,8 @@ class MoviesNetworkManager: BaseManager<MovieAPI, MoyaProvider<MovieAPI>>, Movie
     func getAllMovies(completion: @escaping (Result<Movies, Error>) -> ()) {
         request(target: .getAllMovies, completion: completion)
     }
+    
+    func getMovieDetail(id: Int, completion: @escaping (Result<MovieDetailModel, Error>) -> ()) {
+        request(target: .getMovieDetail(id: id), completion: completion)
+    }
 }

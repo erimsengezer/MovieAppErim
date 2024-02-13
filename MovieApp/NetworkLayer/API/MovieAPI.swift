@@ -10,6 +10,7 @@ import Moya
 
 enum MovieAPI {
     case getAllMovies
+    case getMovieDetail(id: Int)
 }
 
 extension MovieAPI: MTargetType {
@@ -18,6 +19,8 @@ extension MovieAPI: MTargetType {
         switch self {
         case .getAllMovies:
             return generateEndPoint(lastPath: "/tv/popular")
+        case .getMovieDetail(id: let id):
+            return generateEndPoint(lastPath: "/tv/\(id)")
         }
     }
     
@@ -25,12 +28,16 @@ extension MovieAPI: MTargetType {
         switch self {
         case .getAllMovies:
             return .get
+        case .getMovieDetail(id: _):
+            return .get
         }
     }
     
     var task: Task {
         switch self {
         case .getAllMovies:
+            return .requestPlain
+        case .getMovieDetail(id: _):
             return .requestPlain
         }
     }

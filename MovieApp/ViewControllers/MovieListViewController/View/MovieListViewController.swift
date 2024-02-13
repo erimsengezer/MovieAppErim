@@ -12,6 +12,8 @@ protocol MovieListViewProtocol: AnyObject {
     var viewModel: MovieListViewModelProtocol { get }
     
     func update(uiModel: MoviesUIModel)
+    func pushToDetail(viewController: UIViewController)
+    func presentAlert(title: String, message: String, preferredStyle: UIAlertController.Style)
 }
 
 final class MovieListViewController: UIViewController {
@@ -72,12 +74,20 @@ extension MovieListViewController: MovieListViewProtocol {
         self.tableViewDataSource?.update(uiModel: uiModel)
         self.movieListTableView.reloadData()
     }
+    
+    func pushToDetail(viewController: UIViewController) {
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    func presentAlert(title: String, message: String, preferredStyle: UIAlertController.Style) {
+        self.showAlert(title: title, message: message, preferredStyle: preferredStyle)
+    }
 }
 
 // MARK: - MovieListTableViewDelegateOutput
 
 extension MovieListViewController: MovieListTableViewDelegateOutput {
     func didSelectRow(indexPath: IndexPath) {
-        print("Selected Row: \(indexPath.row)")
+        viewModel.pushToDetailScreen(indexPath: indexPath)
     }
 }

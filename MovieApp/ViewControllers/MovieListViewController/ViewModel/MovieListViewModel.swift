@@ -12,6 +12,7 @@ protocol MovieListViewModelProtocol: AnyObject {
     var view: MovieListViewProtocol? { get set }
     
     func fetchAllMovies()
+    func pushToDetailScreen(indexPath: IndexPath)
 }
 
 final class MovieListViewModel: MovieListViewModelProtocol {
@@ -21,8 +22,7 @@ final class MovieListViewModel: MovieListViewModelProtocol {
     weak var view: MovieListViewProtocol?
     
     // MARK: Private Props
-
-    // MARK: Public Props
+    internal var uiModel: MoviesUIModel?
 
     // MARK: Initiliazer
     required init(repository: MovieListRepositoryProtocol) {
@@ -33,9 +33,17 @@ final class MovieListViewModel: MovieListViewModelProtocol {
         repository.fetchAllMovies { [weak self] movies in
             guard let self = self else { return }
             let uiModel: MoviesUIModel = MoviesUIModel(response: movies)
+            self.uiModel = uiModel
             self.view?.update(uiModel: uiModel)
-        } failure: { error in
+        } failure: { [weak self] error in
+            self?.view?.presentAlert(title: "Error !", message: error.localizedDescription, preferredStyle: .alert)
             print(error.localizedDescription)
         }
+    }
+    
+    func pushToDetailScreen(indexPath: IndexPath) {
+        guard let movieID = uiModel?.getItemId(indexPath: indexPath) else { return }
+        guard let viewController = MovieDetailBuilder.generate(movieID: movieID) else { return }
+        view?.pushToDetail(viewController: viewController)
     }
 }
