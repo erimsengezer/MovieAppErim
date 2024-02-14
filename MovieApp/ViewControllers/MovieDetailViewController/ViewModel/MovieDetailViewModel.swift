@@ -34,9 +34,12 @@ final class MovieDetailViewModel: MovieDetailViewModelProtocol {
             guard let self = self else { return }
             let uiModel = MovieDetailUIModel(movieDetailModel: responseModel)
             self.view?.updateUI(uiModel: uiModel)
+            self.view?.hideLoading()
         } failure: { [weak self] error in
+            guard let self = self else { return }
             Logger.log(error.localizedDescription, level: .error)
-            self?.view?.presentAlert(title: "Error !", message: error.localizedDescription, preferredStyle: .alert)
+            self.view?.presentAlert(title: "Error !", message: error.localizedDescription, preferredStyle: .alert)
+            self.view?.hideLoading()
         }
 
     }

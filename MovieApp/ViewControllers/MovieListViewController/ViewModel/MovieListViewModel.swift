@@ -35,9 +35,12 @@ final class MovieListViewModel: MovieListViewModelProtocol {
             let uiModel: MoviesUIModel = MoviesUIModel(response: movies)
             self.uiModel = uiModel
             self.view?.update(uiModel: uiModel)
+            view?.hideLoading()
         } failure: { [weak self] error in
-            self?.view?.presentAlert(title: "Error !", message: error.localizedDescription, preferredStyle: .alert)
+            guard let self = self else { return }
+            self.view?.presentAlert(title: "Error !", message: error.localizedDescription, preferredStyle: .alert)
             Logger.log(error.localizedDescription, level: .error)
+            self.view?.hideLoading()
         }
     }
     

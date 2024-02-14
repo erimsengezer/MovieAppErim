@@ -117,8 +117,8 @@
 		E51BC0D42B7A74E3006DF973 /* MovieApp */ = {
 			isa = PBXGroup;
 			children = (
-				E59BE7942B7CA35800F5CB61 /* Utils */,
 				E51BC0EB2B7A789D006DF973 /* Template */,
+				E59BE7942B7CA35800F5CB61 /* Utils */,
 				E571B8992B7A885B00740201 /* NetworkLayer */,
 				E51BC0E92B7A773D006DF973 /* ViewControllers */,
 				E59BE78F2B7BD5FF00F5CB61 /* Extensions */,
