@@ -21,9 +21,9 @@ protocol MovieDetailViewProtocol: AnyObject {
 final class MovieDetailViewController: UIViewController {
 
     // MARK: - IBOutlets
-    @IBOutlet weak var movieImageView: UIImageView!
-    @IBOutlet weak var movieTitleLabel: UILabel!
-    @IBOutlet weak var overviewTextView: UITextView!
+    @IBOutlet private weak var movieImageView: UIImageView!
+    @IBOutlet private weak var movieTitleLabel: UILabel!
+    @IBOutlet private weak var overviewTextView: UITextView!
     
     // MARK: - Public Properties
     let viewModel: MovieDetailViewModelProtocol

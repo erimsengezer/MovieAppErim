@@ -14,9 +14,9 @@ class MovieListTableViewCell: UITableViewCell {
     static let cellIdentifier = "MovieListTableViewCell"
     
     // MARK: - IBOutlets
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var movieImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet private weak var containerView: UIView!
+    @IBOutlet private weak var movieImageView: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -8,11 +8,7 @@
 import Moya
 import Foundation
 
-protocol BaseManagerProtocol {
-
-}
-
-class BaseManager<Target: TargetType, Provider: MoyaProvider<Target>>: BaseManagerProtocol {
+class BaseManager<Target: TargetType, Provider: MoyaProvider<Target>> {
 
     private var provider: Provider
 
