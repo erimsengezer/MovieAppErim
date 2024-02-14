@@ -22,8 +22,8 @@
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="cSU-YB-3bM">
                     <rect key="frame" x="186.66666666666666" y="428.66666666666669" width="20" height="20"/>
                 </activityIndicatorView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MovieApp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFl-E6-Pkq">
-                    <rect key="frame" x="122" y="371" width="149" height="41"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MovieApp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFl-E6-Pkq">
+                    <rect key="frame" x="16" y="371" width="361" height="41"/>
                     <fontDescription key="fontDescription" type="system" pointSize="34"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -34,8 +34,8 @@
             <constraints>
                 <constraint firstItem="cSU-YB-3bM" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="1mg-89-Mej"/>
                 <constraint firstItem="cSU-YB-3bM" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="Atu-F6-48F"/>
-                <constraint firstItem="gFl-E6-Pkq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="122" id="UfB-7d-eD6"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gFl-E6-Pkq" secondAttribute="trailing" constant="122" id="p33-wb-fDA"/>
+                <constraint firstItem="gFl-E6-Pkq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="UfB-7d-eD6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gFl-E6-Pkq" secondAttribute="trailing" constant="16" id="p33-wb-fDA"/>
                 <constraint firstItem="cSU-YB-3bM" firstAttribute="top" secondItem="gFl-E6-Pkq" secondAttribute="bottom" constant="16.666666666666686" id="vg1-Tv-w4x"/>
             </constraints>
             <point key="canvasLocation" x="101.5267175572519" y="20.422535211267608"/>
