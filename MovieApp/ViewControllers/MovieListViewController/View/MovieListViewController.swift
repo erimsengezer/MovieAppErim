@@ -14,6 +14,8 @@ protocol MovieListViewProtocol: AnyObject {
     func update(uiModel: MoviesUIModel)
     func pushToDetail(viewController: UIViewController)
     func presentAlert(title: String, message: String, preferredStyle: UIAlertController.Style)
+    func showLoading()
+    func hideLoading()
 }
 
 final class MovieListViewController: UIViewController {
@@ -44,6 +46,7 @@ final class MovieListViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        showLoading()
         viewModel.fetchAllMovies()
         configureTableView()
         configureNavigationBar()
@@ -81,6 +84,14 @@ extension MovieListViewController: MovieListViewProtocol {
     
     func presentAlert(title: String, message: String, preferredStyle: UIAlertController.Style) {
         self.showAlert(title: title, message: message, preferredStyle: preferredStyle)
+    }
+    
+    func showLoading() {
+        self.showSpinner()
+    }
+    
+    func hideLoading() {
+        self.removeSpinner()
     }
 }
 

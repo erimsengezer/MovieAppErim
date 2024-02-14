@@ -14,6 +14,8 @@ protocol MovieDetailViewProtocol: AnyObject {
     
     func updateUI(uiModel: MovieDetailUIModel)
     func presentAlert(title: String, message: String, preferredStyle: UIAlertController.Style)
+    func showLoading()
+    func hideLoading()
 }
 
 final class MovieDetailViewController: UIViewController {
@@ -41,6 +43,7 @@ final class MovieDetailViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        showLoading()
         viewModel.fetchMovieDetail()
     }
 }
@@ -62,6 +65,14 @@ extension MovieDetailViewController: MovieDetailViewProtocol {
     
     private func configureNavigationBar(title: String) {
         self.title = title
+    }
+    
+    func showLoading() {
+        self.showSpinner()
+    }
+    
+    func hideLoading() {
+        self.removeSpinner()
     }
     
     func presentAlert(title: String, message: String, preferredStyle: UIAlertController.Style) {
