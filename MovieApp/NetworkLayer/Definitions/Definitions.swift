@@ -35,10 +35,23 @@ extension MTargetType {
         return URL(string: NetworkUtil.environmentBaseURL)!
     }
     
+    private var apiKey: String {
+        get {
+            guard let filePath = Bundle.main.path(forResource: "Movie-Info", ofType: "plist") else {
+                fatalError("Couldn't find file 'Movie-Info.plist'.")
+            }
+            let plist = NSDictionary(contentsOfFile: filePath)
+            guard let value = plist?.object(forKey: "API_KEY") as? String else {
+                fatalError("Couldn't find key 'API_KEY' in 'Movie-Info.plist'.")
+            }
+            return value
+        }
+    }
+    
     public var headers: [String: String]? {
         let headers: [String: String] = [
             "Accept": "application/json; charset=utf-8",
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMjRiODVkNTU3YjRiN2VmMjk1YjRmMGE0MDljNjUzOSIsInN1YiI6IjYyZmI1YzAzMjQ0MTgyMDA3Yzc2ZTNkZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.gs8cKhouwUrkkkXAB1Osmf3EdySrNdtNoWuQXEXLrQY"
+            "Authorization": "Bearer \(apiKey)"
         ]
         return headers
     }

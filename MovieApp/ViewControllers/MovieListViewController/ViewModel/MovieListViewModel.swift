@@ -37,7 +37,7 @@ final class MovieListViewModel: MovieListViewModelProtocol {
             self.view?.update(uiModel: uiModel)
         } failure: { [weak self] error in
             self?.view?.presentAlert(title: "Error !", message: error.localizedDescription, preferredStyle: .alert)
-            print(error.localizedDescription)
+            Logger.log(error.localizedDescription, level: .error)
         }
     }
     

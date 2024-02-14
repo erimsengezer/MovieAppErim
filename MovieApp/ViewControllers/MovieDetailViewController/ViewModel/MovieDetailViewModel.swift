@@ -35,6 +35,7 @@ final class MovieDetailViewModel: MovieDetailViewModelProtocol {
             let uiModel = MovieDetailUIModel(movieDetailModel: responseModel)
             self.view?.updateUI(uiModel: uiModel)
         } failure: { [weak self] error in
+            Logger.log(error.localizedDescription, level: .error)
             self?.view?.presentAlert(title: "Error !", message: error.localizedDescription, preferredStyle: .alert)
         }
 
