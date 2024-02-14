@@ -10,7 +10,7 @@ import UIKit
 class SplashViewController: UIViewController {
     
     // MARK: - IBOutlets
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
 
     override func viewDidLoad() {

@@ -21,7 +21,7 @@ protocol MovieListViewProtocol: AnyObject {
 final class MovieListViewController: UIViewController {
 
     // MARK: - IBOutlets
-    @IBOutlet weak var movieListTableView: UITableView!
+    @IBOutlet private weak var movieListTableView: UITableView!
     
     // MARK: - Public Properties
     let viewModel: MovieListViewModelProtocol
